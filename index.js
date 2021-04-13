@@ -8,11 +8,11 @@ app.use(express.static("./public"));
 app.use(bodyParser.json());
 
 // add the contacts routes
-const contacts = require('./routes/contacts');
-app.use(contacts);
+// const contacts = require('./routes/contacts');
+// app.use(contacts);
 
 
-// require stack 
+// require stack short hand
 app.use(require("./routes/contacts"));
 app.use(require("./routes/comments"));
 app.use(require("./routes/products"));

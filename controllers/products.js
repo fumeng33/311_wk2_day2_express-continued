@@ -31,18 +31,18 @@ let create = function (req, res) {
   {
     _id: Math.floor(Math.random() * 100),
     name: req.body.name,
-    occupation: req.body.price
+    description: req.body.description
   }
 
   // read in the data 
   // and assign an id to the product 
-  req.body._id = nextProductId;
-  nextProductId++;
+  req.body._id = newProduct;
+  // nextProductId++;
 
   //increment the varible holding the next id
   //so when we add the next contact, they dont get
   // the same id 
-  contacts.push(newProducts);
+  products.push(newProduct);
   res.json(products); // global varible is contacts 
 }
 /**

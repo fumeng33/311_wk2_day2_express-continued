@@ -4,17 +4,17 @@ const commentController = require('../controllers/comments'); // .. bc go outsid
 
 
 
-//GET/ Contacts
+//GET/ comments
 //returns all the contact 
 router.get("/comments", commentController.list)
 
 
-// POST /contacts
+// POST /comments
 //DATA: json representation of the contact 
 // adds a new contact to the contacts array 
 router.post("/comments", commentController.create)
 
-//GET/contacts/:id 
+//GET/comments/:id 
 // controller .show logic 
 router.get("/comments/:id", commentController.show)
 

@@ -1,4 +1,4 @@
-const contacts = require("../data/comments");
+const comments = require("../data/comments");
 
 // loop through all the contacts,
 //make a variable the hold the id of the next contact
@@ -30,8 +30,8 @@ let create = function (req, res) {
   const newComment =
   {
     _id: Math.floor(Math.random() * 100),
-    name: req.body.name,
-    occupation: req.body.postID
+    body: req.body.body,
+    postId: req.body.postId
   }
   // read in the data 
   // and assign an id to the contact 
@@ -41,7 +41,7 @@ let create = function (req, res) {
   //increment the varible holding the next id
   //so when we add the next contact, they dont get
   // the same id 
-  contacts.push(newComment);
+  comments.push(newComment);
   res.json(comments); // global varible is contacts 
 }
 /**
@@ -50,20 +50,7 @@ let create = function (req, res) {
  * @param {res} res : the response object 
  */
 
-// let show = (req, res) => {
-//   // get contact by id
-//   // fill this in for assignment 
-//   // function to find what id are they looking for? 
-//   const found = contacts.some(contact => contact._id == req.params.id);
-//   // when we find this contact will filler it out to the create id and sent to the route 
-//   if (found) {
-//     res.send(contacts.filter(contact => contact._id == req.params.id));
-//     // if not found it will give an error NOT FOUND
-//   } else {
-//     res.status(404).json({msg: `User id ${req.params.id} Not Found`
-//     })
-//   }
-// }
+
 
 const show = (req, res) => {
   const found = comments.some(comment => comment._id == req.params.id)

@@ -1,22 +1,22 @@
 const express = require ('express');
 const router = express.Router();
-const contactController = require('../controllers/contacts'); // .. bc go outside of the routes 
+const vehicleController = require('../controllers/vehicles'); // .. bc go outside of the routes 
 
 
 
-//GET/ Contacts
-//returns all the contact 
-router.get("/contacts", contactController.list)
+//GET/ vehicles
+//returns all the vehicles 
+router.get("/vehicles", vehicleController.list)
 
 
-// POST /contacts
+// POST /vehicles
 //DATA: json representation of the contact 
 // adds a new contact to the contacts array 
-router.post("/contacts", contactController.create)
+router.post("/vehicles", vehicleController.create)
 
-//GET/contacts/:id 
+//GET/vehicles/:id 
 // controller .show logic 
-router.get("/contacts/:id", contactController.show)
+router.get("/vehicles/:id", vehicleController.show)
 
 
 // read in the data 
